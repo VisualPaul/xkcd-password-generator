@@ -19,10 +19,8 @@ def positive(x):
     return x
 
 def generate(words, count):
-    res = []
-    for i in xrange(count):
-        res.append(random.choice(words))
-    return ''.join(res)
+    return ''.join(random.choice(words) for i in xrange(count))
+
 def num_passwords(words, count, max_length):
     # complexity: O(count * max_word_len * max_length)
     start = {0:1.0} # to force more efficient float computations
